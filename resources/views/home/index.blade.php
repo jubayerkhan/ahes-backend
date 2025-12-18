@@ -57,7 +57,7 @@
         @include('component.subscription')
         <!-- subscription section end -->
         <!-- footer -->
-        <!-- @include('component.footer') -->
+        @include('component.footer')
         <!-- footer end -->
     </div>
 
