@@ -193,6 +193,30 @@ $isAdmin = auth('admin')->user()->hasRole('admin');
         @endif
       </ul>
     </li>
+    <li
+      class="menu-item {{ Helper::menuIsOpen(['admin.users.create', 'admin.users.index', 'admin.users.edit', 'admin.users.show', 'admin.users.updatePassword']) }}">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons ti ti-users"></i>
+        <div>Contacts</div>
+      </a>
+      <ul class="menu-sub">
+        <!-- @if($isAdmin || auth('admin')->user()->hasPermission(['admin-users-create']))
+        <li class="menu-item {{ Helper::menuIsActive(['admin.testimonials.create']) }}">
+          <a href="{{ route('admin.testimonials.create') }}" class="menu-link">
+            <div>New Testimonials</div>
+          </a>
+        </li>
+        @endif -->
+
+        @if($isAdmin || auth('admin')->user()->hasPermission(['admin-users-read']))
+        <li class="menu-item {{ Helper::menuIsActive(['admin.testimonials.index']) }}">
+          <a href="{{ route('admin.contacts.index') }}" class="menu-link">
+            <div>Contacts List</div>
+          </a>
+        </li>
+        @endif
+      </ul>
+    </li>
     @endif
 
     <li class="menu-header small text-uppercase">

@@ -42,7 +42,7 @@
                 <th style="width: 20%;">Description</th>
                 <td style="width: 80%;">{{ $testimonial->description }}</td>
               </tr>
-              
+
               <tr>
                 <th style="width: 20%;">Status</th>
                 <td style="width: 80%;">{!! Helper::activeStatusLabel($testimonial->is_active) !!}</td>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Auth\UserAuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\AuthenticateAdmin;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,10 @@ Route::domain(env("APP_DOMAIN"))->group(function () {
     Route::middleware('auth')->group(function () {
         Route::post('/logout', [UserAuthController::class, 'logout'])->name('logout');
     });
+
+    // Contact form submission
+    Route::post('/contact/store', [ContactController::class, 'store'])
+    ->name('contact.store');
 });
 
 // Admin subdomain (admin.ahes.test)

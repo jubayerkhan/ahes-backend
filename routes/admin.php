@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\WhyPointController;
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,6 +71,10 @@ Route::domain(env('ADMIN_SUBDOMAIN', 'admin') . '.' . env('APP_DOMAIN_URL'))->na
       //Site Setting
       Route::get('site-settings', 'Admin\SiteSettingController@index')->name('site-settings.index');
       Route::post('site-settings', 'Admin\SiteSettingController@store')->name('site-settings.store');
+
+      //Contact routes
+      Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+
     });
   });
 });

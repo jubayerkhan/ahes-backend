@@ -13,7 +13,7 @@
                 <div class="contact-form-wrapper floatCss">
                     <div class="contact-form-tittle floatCss">Inquire now</div>
                     <div class="contact-form-container floatCss">
-                        <form action="" method="POST">
+                        <form action="{{ route('contact.store') }}" method="POST">
                             @csrf
 
                             <div class="contact-input-single floatCss">
