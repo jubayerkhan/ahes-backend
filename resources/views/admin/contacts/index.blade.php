@@ -48,7 +48,7 @@
                 <table class="table table-bordered table-sm table-hover">
                     <thead>
                         <tr>
-                            <!-- <th class="text-center">Actions</th> -->
+                            <th class="text-center">Actions</th>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -60,7 +60,7 @@
                     <tbody>
                         @foreach ($contacts as $contact)
                             <tr>
-                                
+                                <td>Delete</td>
                                 <td>{{ $contact->id }}</td>
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->email }}</td>
