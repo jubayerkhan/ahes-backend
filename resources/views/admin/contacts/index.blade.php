@@ -26,16 +26,6 @@
                     {{ html()->text('name', request()->get('name'))->class('form-control') }}
                 </div>
 
-                <div class="col-md-3 form-group mb-3">
-                    {{ html()->label('Email', 'email')->class('form-label') }}
-                    {{ html()->text('email', request()->get('email'))->class('form-control') }}
-                </div>
-
-                <div class="col-md-3 form-group mb-3">
-                    {{ html()->label('Phone', 'phone')->class('form-label') }}
-                    {{ html()->text('phone', request()->get('phone'))->class('form-control') }}
-                </div>
-
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary me-sm-2 me-1 waves-effect waves-light">Submit</button>
                 </div>
