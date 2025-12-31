@@ -74,7 +74,8 @@ Route::domain(env('ADMIN_SUBDOMAIN', 'admin') . '.' . env('APP_DOMAIN_URL'))->na
 
       //Contact routes
       Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
-
+      Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])
+        ->name('contacts.destroy');
     });
   });
 });

@@ -99,7 +99,7 @@
                                 </td>
 
                                 <td>{{ $service->description }}</td>
-                                
+
                                 <td class="text-center">{!! Helper::activeStatusLabel($service->is_active) !!}</td>
 
                                 <td class="text-center">{!! Helper::activeStatusLabel($service->is_feature) !!}</td>

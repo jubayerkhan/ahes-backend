@@ -54,13 +54,27 @@
                             <th>Email</th>
                             <th>Subject</th>
                             <th>Message</th>
-                            <th>Time</th>
+                            <th>Created at</th>
+                            <th>Updated at</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($contacts as $contact)
                             <tr>
-                                <td>Delete</td>
+                                <td class="text-center">
+                                    <form action="{{ route('admin.contacts.destroy', $contact->id) }}"
+                                            method="POST"
+                                         onsubmit="return confirm('Are you sure you want to delete this contact?')">
+
+                                        @csrf
+                                            @method('DELETE')
+
+                                        <button class="btn btn-sm btn-outline-danger" type="submit">
+                                            <i class="ti ti-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+
                                 <td>{{ $contact->id }}</td>
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->email }}</td>

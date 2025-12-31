@@ -153,24 +153,6 @@ class WhyPointController extends Controller
             $point = WhyPoint::findOrFail($id);
             $point->delete();
 
-            // DB::beginTransaction();
-            // try {
-            //     $admin->update([
-            //         'admin_id' => Auth::guard('admin')->user()->id,
-            //     ]);
-
-            //     $admin->permissions()->sync([]);
-            //     $admin->syncRoles([]);
-
-            //     $admin->delete();
-
-            //     DB::commit();
-            // } catch (\Exception $e) {
-            //     DB::rollback();
-            //     Session::flash('warning', 'Something went wrong, Please try again later.');
-            //     return redirect()->back();
-            // }
-
             Session::flash('success', 'The point has been deleted');
 
             return redirect()->route('admin.why-points.index');
