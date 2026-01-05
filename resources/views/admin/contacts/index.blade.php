@@ -52,12 +52,11 @@
                         @foreach ($contacts as $contact)
                             <tr>
                                 <td class="text-center">
-                                    <form action="{{ route('admin.contacts.destroy', $contact->id) }}"
-                                            method="POST"
-                                         onsubmit="return confirm('Are you sure you want to delete this contact?')">
+                                    <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST"
+                                        onsubmit="return confirm('Are you sure you want to delete this contact?')">
 
                                         @csrf
-                                            @method('DELETE')
+                                        @method('DELETE')
 
                                         <button class="btn btn-sm btn-outline-danger" type="submit">
                                             <i class="ti ti-trash"></i>
